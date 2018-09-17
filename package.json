@@ -2,7 +2,7 @@
   "name": "ajap",
   "version": "0.0.1",
   "description": "ajax,jsonp",
-  "main": "webpack.config.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
@@ -24,5 +24,6 @@
   "repository":{
     "type": "git",
     "url": "https://github.com/peng/Ajap.git"
-  }
+  },
+  "files":["src","dist"]
 }
