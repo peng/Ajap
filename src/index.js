@@ -58,6 +58,8 @@ export default function ajap(option) {
       default:
         console.error("data is not standard!");
     }
+  } else {
+    url += '?';
   };
 
   let callback = option.callback;
