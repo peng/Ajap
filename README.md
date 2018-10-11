@@ -3,6 +3,26 @@
 ## It is only ajax jsonp method and is very easy to use.  
 ## Why I create it.  
 Hot JavaScript Framework such as Vue and React not offer ajax method. And most popular ajax method such axios and SuperAgent not support jsonp. Other open jsonp method use not very well and jQuery is big. So I create this.
+## How to install
+If you want use single js file.
+```
+<script src="ajap.js" ></script>
+```
+
+If you use webpack.
+```
+//Install it.
+npm install ajap --save
+
+// Use it.
+// import
+import Ajap from 'ajap';
+
+// Or require
+
+const Ajap = require('ajap');
+
+```
 ## How to use it 
 ```
 Ajap({ 
