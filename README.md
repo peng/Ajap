@@ -4,9 +4,13 @@
 ## Why I create it.  
 Hot JavaScript Framework such as Vue and React not offer ajax method. And most popular ajax method such axios and SuperAgent not support jsonp. Other open jsonp method use not very well and jQuery is big. So I create this.
 ## How to install
-If you want use single js file.
+If you want use single js file. These files is in   *dist* folder
 ```
-<script src="ajap.js" ></script>
+//development mode
+<script src="ajap.js"></script>
+
+//production mode
+<script src="ajap.min.js" ></script>
 ```
 
 If you use webpack.
