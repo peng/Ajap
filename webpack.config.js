@@ -30,5 +30,5 @@ if (process.env.NODE_ENV === 'development') {
   config.output.filename = "[name].js";
   config.devtool = "inline-source-map";
 };
-
+/* 打包模块配置 */
 module.exports = config;
