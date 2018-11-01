@@ -1,6 +1,6 @@
 {
   "name": "ajap",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "ajax,jsonp",
   "main": "./src/index.js",
   "scripts": {
