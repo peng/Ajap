@@ -25,19 +25,20 @@ export default function ajap(option) {
     // str = str.substring(0,endLen);
     return str;
   }
+  const oHead = document.querySelector('head');
+  const script = document.createElement('script');
 
   const jsonpGo = (url, async) => {
-    const script = document.createElement('script');
     script.src = url;
     script.async = async;
-    const oHead = document.querySelector('head');
+    
     oHead.appendChild(script);
 
   }
 
   const randNum = () => {
     const oT = new Date().getTime().toString();
-    const num = Math.random()*10000000000;
+    const num = Math.ceil(Math.random()*10000000000);
     const randStr = num.toString();
     return oT+randStr;
   }
@@ -73,7 +74,7 @@ export default function ajap(option) {
   let callback = option.callback;
 
   if (typeof (callback) == 'undefined') {
-    callback = 'callback_'+ randNum();
+    callback = 'callback';// if add random number will CORB 如果添加随机数会出现跨域情况
   }
 
   let callbackName = option.callbackName;
@@ -86,6 +87,7 @@ export default function ajap(option) {
 
   window[callbackName] = (data) => {
     success && success(data);
+    oHead.removeChild(script); //delete script tag
   };
 
   url += (dataStr+callback+"="+callbackName);
