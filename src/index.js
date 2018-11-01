@@ -1,6 +1,7 @@
 export default function ajap(option) {
 
   /* 
+    将来要增加,url中已经添加参数的方法
     option = {
       url:string,
       async:boolean,
