@@ -35,6 +35,13 @@ export default function ajap(option) {
 
   }
 
+  const randNum = () => {
+    const oT = new Date().getTime().toString();
+    const num = Math.random()*10000000000;
+    const randStr = num.toString();
+    return oT+randStr;
+  }
+
   let url = option.url;
 
   if (typeof(url) == "undefined") {
@@ -66,13 +73,13 @@ export default function ajap(option) {
   let callback = option.callback;
 
   if (typeof (callback) == 'undefined') {
-    callback = 'callback';
+    callback = 'callback_'+ randNum();
   }
 
   let callbackName = option.callbackName;
 
   if (typeof (callbackName) == 'undefined') {
-    callbackName = 'callback';
+    callbackName = 'callback_' + randNum();
   };
 
   const success = option.success;
