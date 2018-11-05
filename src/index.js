@@ -18,7 +18,7 @@ export default function ajap(option) {
     let str = '?';
     for (let item in obj) {
       str += item;
-      console.log(obj[item]);
+      // console.log(obj[item]);
       str += `=${obj[item]}&`;
     }
     // const endLen = str.length - 1;
