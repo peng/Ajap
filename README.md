@@ -33,21 +33,18 @@ Ajap({
   url:'',
   data:{},
   success:function
-  async:boolean,
   callback:'',
   callbackName:''
 })
  
- url -> string
+ url -> string -- it can include '?'
  data -> object
  success -> function
- async -> boolean
  callback -> string
  callbackName -> string
 ```  
 
 data: your send data  
 success: if is successful get data run function  
-async: request is async or not, default is `true` . If you want sync set `false`  
   
 Ajap also takes optional `callback` and `callbackName` options to specify the callback query-string key and the callback function name respectively while jQuery uses jsonp and jsonpCallback for these same options.

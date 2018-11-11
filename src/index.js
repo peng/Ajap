@@ -1,10 +1,8 @@
 export default function ajap(option) {
 
   /* 
-    将来要增加,url中已经添加参数的方法
     option = {
       url:string,
-      async:boolean,
       data:object,
       callback:string,
       cabbbackName:string,
@@ -14,26 +12,25 @@ export default function ajap(option) {
     url must be input other can choose.
   */
 
+ let url = option.url;
+
   const objToVal = (obj) => {
     let str = '?';
+    if (url.indexOf('?') != -1) {
+      str = '&';
+    }
     for (let item in obj) {
       str += item;
-      // console.log(obj[item]);
       str += `=${obj[item]}&`;
     }
-    // const endLen = str.length - 1;
-    // str = str.substring(0,endLen);
     return str;
   }
   const oHead = document.querySelector('head');
   const script = document.createElement('script');
 
-  const jsonpGo = (url, async) => {
+  const jsonpGo = (url) => {
     script.src = url;
-    script.async = async;
-    
     oHead.appendChild(script);
-
   }
 
   const randNum = () => {
@@ -43,23 +40,14 @@ export default function ajap(option) {
     return oT+randStr;
   }
 
-  let url = option.url;
-
   if (typeof(url) == "undefined") {
     console.error("url must input!");
-  }
-
-  let async = option.async;
-
-  if (typeof(async) == 'undefined') {
-    async = true;
   }
 
   let data = option.data,dataStr = '';
 
   if (typeof (data) != 'undefined') {
     const type = Object.prototype.toString.call(data);
-    // console.log(type);
     switch (type) {
       case '[object Object]':
         dataStr = objToVal(data);
@@ -92,6 +80,6 @@ export default function ajap(option) {
 
   url += (dataStr+callback+"="+callbackName);
 
-  jsonpGo(url,async);
+  jsonpGo(url);
 
 }
