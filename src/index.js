@@ -54,9 +54,14 @@ export default function ajap(option) {
         break;
       default:
         console.error("data is not standard!");
+        return;
     }
   } else {
-    url += '?';
+    if (url.indexOf('?') != -1) {
+      url += '&';
+    } else {
+      url += '?';
+    }
   };
 
   let callback = option.callback;
