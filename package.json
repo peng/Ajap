@@ -2,7 +2,7 @@
   "name": "ajap",
   "version": "1.0.4",
   "description": "ajax,jsonp",
-  "main": "./src/index.js",
+  "main": "./dist/ajap.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development webpack",
