@@ -34,7 +34,9 @@ Ajap({
   data:{},
   success:function
   callback:'',
-  callbackName:''
+  callbackName:'',
+  load:function,
+  nocallback:boolean
 })
  
  url -> string -- it can include '?'
@@ -42,9 +44,13 @@ Ajap({
  success -> function
  callback -> string
  callbackName -> string
+ load -> function
+ nocallback -> boolean
 ```  
 
-data: your send data  
-success: if is successful get data run function  
+data: Your send data  
+success: If is successful get data run function  
+load: If data loaded callback function  
+nocallback: No callback param , default `false` , If you set `true` param `success` , `callback` , `callbackName` will be useless  
   
 Ajap also takes optional `callback` and `callbackName` options to specify the callback query-string key and the callback function name respectively while jQuery uses jsonp and jsonpCallback for these same options.
